@@ -1,11 +1,11 @@
 Summary:	A terminal interface for exploring and arranging tabular data
 Name:		visidata
-Version:	2.10.1
+Version:	2.10.2
 Release:	1
 License:	GPL v3+
 Group:		Applications
 Source0:	https://github.com/saulpw/visidata/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	38acc0c580c9ccb32078d1b0485bbdb4
+# Source0-md5:	3574c16387368af9e650cf2cdecf73bf
 URL:		https://www.visidata.org/
 BuildRequires:	python3
 BuildRequires:	python3-modules
