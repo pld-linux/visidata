@@ -10,6 +10,7 @@ URL:		https://www.visidata.org/
 BuildRequires:	python3
 BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
+BuildRequires:	rpmbuild(macros) >= 1.714
 Suggests:	python3-lxml
 Suggests:	python3-odfpy
 Suggests:	python3-openpyxl
