@@ -1,7 +1,7 @@
 Summary:	A terminal interface for exploring and arranging tabular data
 Name:		visidata
 Version:	3.0.2
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications
 Source0:	https://github.com/saulpw/visidata/archive/v%{version}/%{name}-%{version}.tar.gz
