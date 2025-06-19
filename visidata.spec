@@ -10,6 +10,7 @@ URL:		https://www.visidata.org/
 BuildRequires:	python3 >= 1:3.7
 BuildRequires:	python3-modules >= 1:3.7
 BuildRequires:	python3-setuptools
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python3 >= 1:3.7
 Requires:	python3-modules >= 1:3.7
