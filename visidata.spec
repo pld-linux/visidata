@@ -1,12 +1,13 @@
 Summary:	A terminal interface for exploring and arranging tabular data
 Name:		visidata
-Version:	3.3
+Version:	3.4
 Release:	1
 License:	GPL v3+
 Group:		Applications
 Source0:	https://github.com/saulpw/visidata/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	3826d61eb6ff55fb715d71560055f171
+# Source0-md5:	ef093a45902b28620fee8c2d1da16cc1
 URL:		https://www.visidata.org/
+BuildRequires:	groff
 BuildRequires:	python3 >= 1:3.7
 BuildRequires:	python3-modules >= 1:3.7
 BuildRequires:	python3-setuptools
@@ -37,10 +38,22 @@ of rows with ease.
 %build
 %py3_build
 
+# based on dev/mkman.sh
+MANDIR="$(pwd)/visidata/man"
+PYTHONPATH="$(pwd)" %{__python3} "$MANDIR/parse_options.py" "$MANDIR/vd-cli.inc" "$MANDIR/vd-opts.inc"
+
+soelim -rt -I "$MANDIR" "$MANDIR/vd.inc" > "$MANDIR/vd-pre.1"
+preconv -r -e utf8 "$MANDIR/vd-pre.1" > "$MANDIR/vd.1"
+echo '.so man1/vd.1' > "$MANDIR/visidata.1"
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
+
 %py3_install
+
+cp -p visidata/man/{vd,visidata}.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -55,3 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/vd.1*
 %{_mandir}/man1/visidata.1*
 %{_desktopdir}/visidata.desktop
+%{_iconsdir}/hicolor/*x*/apps/visidata.png
+%{_datadir}/metainfo/org.visidata.VisiData.metainfo.xml
