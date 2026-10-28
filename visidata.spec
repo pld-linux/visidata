@@ -1,11 +1,11 @@
 Summary:	A terminal interface for exploring and arranging tabular data
 Name:		visidata
-Version:	3.4
+Version:	3.5
 Release:	1
 License:	GPL v3+
 Group:		Applications
 Source0:	https://github.com/saulpw/visidata/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	ef093a45902b28620fee8c2d1da16cc1
+# Source0-md5:	b1b698e9667819ee7f28702862bc2b92
 URL:		https://www.visidata.org/
 BuildRequires:	groff
 BuildRequires:	python3 >= 1:3.7
@@ -62,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/vd
 %attr(755,root,root) %{_bindir}/vd2to3.vdx
+%attr(755,root,root) %{_bindir}/vdx
 %attr(755,root,root) %{_bindir}/visidata
 %{py3_sitescriptdir}/visidata
 %{py3_sitescriptdir}/visidata-%{version}-py*.egg-info
